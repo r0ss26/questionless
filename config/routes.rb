@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :questions
+  devise_for :users
   get 'pages/index'
 
   root to: 'pages#index'
