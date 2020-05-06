@@ -1,60 +1,29 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-      <%# image_path("questionless.png") %>
-    </a>
-
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+  <div class="navbar-logo">
+    <%= link_to image_tag("questionless.png", :alt => "Questionless"), root_path %>
+    <%= link_to "Home", root_path %>
   </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <% if !user_signed_in? %>
-          <%= link_to  "Sign up", new_user_registration_path, class: "button is-primary" %>
-          <%= link_to  "Log in", new_user_session_path, class:"button is-light" %>
-          <% else %>
-          <%= link_to  "Profile", edit_user_registration_path %>
-          <%= link_to  "Log out", destroy_user_session_path, method: :delete %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <div class = "navbar-answer">
+    <%# <%= link_to  "Answer", answers_path %>
+    Answer
+  </div>
+  <div class = "navbar-spaces">
+    <%# <%= link_to  "Spaces", spaces_path %>
+    Spaces
+  </div>
+  <div class = "navbar-notifications">
+    <%# <%= link_to  "Notifications", notifications_path %>
+    Notifications
+  </div>
+  <div class = "navbar-search">
+    <input type = "text">
+  </div>
+  <div class = "navbar-profile">
+    <%# <%= link_to  "Profile", profile_path %>
+    Profile
+  </div>
+  <div class = "navbar-question">
+    <%# <%= link_to  "Add Question", questions_path %>
+    Add Questions
   </div>
 </nav>
