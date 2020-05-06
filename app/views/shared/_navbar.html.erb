@@ -51,15 +51,15 @@
           <div class="dropdown is-right" id="dropdown-menu-user-control">
             <div class="dropdown-trigger" onclick="dropdownToggle('user-control')">
               <div aria-haspopup="true" aria-controls="dropdown-menu-user-control">
-                <button class="button is-light" id="navbar-avatar">
-                  <span style="border-radius: 9999px;">Profile<%#= link_to  image_tag(current_user.avatar_attachment_path), user_article_path(current_user) %></span>
+                <button class="button" id="navbar-avatar" style="border:none;">
+                  <span style="border-radius: 9999px;"><%= image_tag(current_user.avatar_attachment_path) %></span>
                 </button>
               </div>
             </div>
             <div class="dropdown-menu" id="dropdown-menu-user-control" role="menu">
               <div class="dropdown-content">
-                <p class="dropdown-item"><%#= image_tag(current_user.avatar_attachment_path) %></p>
-                <p class="dropdown-item"><%= current_user.email %></p>
+                <p class="dropdown-item"><%= link_to image_tag(current_user.avatar_attachment_path), profile_path(current_user) %></p>
+                <p class="dropdown-item"><%= link_to current_user.name, profile_path(current_user) %></p>
                 <hr class="dropdown-divider">
                 <a href="#" class="dropdown-item">
                   Messages

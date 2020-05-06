@@ -12,7 +12,11 @@ class User < ApplicationRecord
 
   has_many :questions
 
-  
+  after_initialize :init
+
+  def init
+    self.name ||= email.split('@')[0]
+  end
 
   def current_user?(user)
     user == current_user
