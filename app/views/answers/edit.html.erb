@@ -1,0 +1,13 @@
+<h1>Edit Answer</h1>
+
+<%= form_with(url: question_answer_path, model: @answer, local: true) do |form| %>
+
+  <p>
+    <%= form.label :answer %><br>
+    <%= form.text_area :answer %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

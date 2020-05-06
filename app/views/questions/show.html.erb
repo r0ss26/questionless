@@ -10,5 +10,8 @@
   <%= @question.user.email %>
 </p>
 
+<%= render "shared/show_answers" %>
+<%= render "shared/new_answer" %>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
