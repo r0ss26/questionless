@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  
   def index
     @answers = Question.find_by_id(params[:question_id]).answers.all
   end
@@ -14,13 +15,12 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    @question = Question.find_by_id(params[:question_id])
-    @answer = @question.answers.find_by_id(params[:id])
+    set_answer
   end
 
   def update
-    @question = Question.find_by_id(params[:question_id])
-    @answer = @question.answers.find_by_id(params[:id])
+    set_answer
+
     if @answer.user_id == current_user.id
       @answer.update(answer_params)
     end
@@ -28,8 +28,8 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    @question = Question.find_by_id(params[:question_id])
-    @answer = @question.answers.find(params[:id])
+    set_answer
+
     if @answer.user_id == current_user.id
       @answer.destroy
     end
@@ -39,6 +39,11 @@ class AnswersController < ApplicationController
   private
   def answer_params
     params.require(:answer).permit(:answer)
+  end
+
+  def set_answer
+    @question = Question.find_by_id(params[:question_id])
+    @answer = @question.answers.find(params[:id])
   end
 
 end

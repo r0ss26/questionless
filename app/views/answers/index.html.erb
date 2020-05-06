@@ -1,0 +1,19 @@
+<% for answer in @answers %>
+
+  <p>
+    <strong>Answered by:</strong>
+    <%= answer.user.email %>
+  </p>
+ 
+  <p>
+    <strong>Answer:</strong>
+    <%= answer.answer %>
+  </p>
+  <p>
+    <% if answer.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_question_answer_path(@question.id, answer.id) %>
+      <%= link_to 'Delete', [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?'} %>
+    <% end %>
+  </p>
+
+<% end %>
