@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "/", to: "pages#index", as: "root"
+  get '/', to: 'questions#index', as: 'root'
   resources :questions do
     resources :answers
   end

@@ -33,8 +33,13 @@
   padding-left: 0px;
 }
 
+.navbar-menu .buttons a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #search {
-  padding-top: 6px;
+  padding-top: 5px;
 }
 
 #navbar-avatar {
