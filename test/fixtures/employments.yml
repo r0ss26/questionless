@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  company: MyString
+  start_year: 1
+  end_year: 1
+  currently: false
+  user: one
+
+two:
+  position: MyString
+  company: MyString
+  start_year: 1
+  end_year: 1
+  currently: false
+  user: two

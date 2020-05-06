@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_question, only: %i[show]
   before_action :set_user_question, only: %i[edit update destroy]
   before_action :authenticate_user!, only: %i[new edit update destroy]
 
@@ -70,6 +70,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  # Allow only current user to make change
   def set_user_question
     @question = current_user.questions.find_by_id(params[:id])
   end
