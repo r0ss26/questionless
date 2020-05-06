@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  
+
   def index
     @answers = Question.find_by_id(params[:question_id]).answers.all
   end
@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
   end
 
   def show
-
+    
   end
 
   def edit
@@ -45,5 +45,4 @@ class AnswersController < ApplicationController
     @question = Question.find_by_id(params[:question_id])
     @answer = @question.answers.find(params[:id])
   end
-
 end
