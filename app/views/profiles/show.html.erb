@@ -7,11 +7,11 @@
         </div>
       </div>
       <div class="column">
-        <p>Dan Levy</p>
+        <%#= @user.name %>
         <p>Somewhat Educated Australian</p>
       </div>
     </div>
-    <p>Sometimes I wrap myself up in a curtain and pretend I’m a spooky ghost</p>
+    <%#= @user.description %>
     <div>
       <button>Follow</button>
       <button>Notify Me</button>
@@ -40,7 +40,7 @@
       <p>Knows Japanese</p>
       <p>Active in Spanish</p>
       <%= render  "employment/employment" %>
-      <%#= link_to  "Add employment credential", new_employment_path %>
+      <%= link_to  "Add employment credential", new_user_employment_path(current_user) %>
     </div>
     <br />
     <br />

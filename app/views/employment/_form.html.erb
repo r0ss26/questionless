@@ -1,4 +1,7 @@
-<%= form_with(model: @employment, local: true) do |form| %>
+<%= form_with(model: [@user, @user.employments.build], url: user_employment_index_path(@user), method: "post", local: true) do |form| %>
+<%#= form_with(url: user_employment_index_path(@user), method: "post") do |form| %>
+
+
 <% if @employment.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@employment.errors.count, "error") %> prohibited this employment from being saved:</h2>
@@ -18,18 +21,18 @@
 
 <div class="field">
   <%= form.label "Start Year" %>
-  <%= form.integer :start_year %>
+  <%= form.date_select :start_year, :start_year => Date.current.year, :end_year => 1920%>
   <%#= form.date_select :year, :order => [:year], :start_year => 1900, :end_year => Time.now.year, :prompt => {:year => "Select year"} %>
 </div>
 
 <div class="field">
   <%= form.label "End Year" %>
-  <%= form.integer :end_year %>
+  <%= form.date_select :end_year, :start_year => Date.current.year, :end_year => 1920%>
 </div>
 
 <div class="field">
   <%= form.label "I currently work here" %>
-  <%= form.checkbox :currently %>
+  <%= form.check_box :currently %>
 </div>
 
 <div class="actions">

@@ -9,6 +9,7 @@ class EmploymentController < ApplicationController
 
   def new
     @employment = current_user.employments.new
+    @user = current_user
   end
 
   def edit; end
@@ -18,7 +19,7 @@ class EmploymentController < ApplicationController
 
     respond_to do |format|
       if @employment.save
-        format.html { redirect_to @employment, notice: 'Employment was successfully created.' }
+        format.html { redirect_to profile_path(current_user), notice: 'Employment was successfully created.' }
         format.json { render :show, status: :created, location: @employment }
       else
         format.html { render :new }

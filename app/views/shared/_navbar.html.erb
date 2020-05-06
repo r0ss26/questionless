@@ -89,9 +89,7 @@
                 </a>
                 <%= link_to  "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
                 <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                  Profile
-                </a>
+                <%= link_to  "Profile", profile_path(current_user), class:"dropdown-item" %>
                 <a href="#" class="dropdown-item">
                   Help
                 </a>
