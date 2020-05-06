@@ -41,6 +41,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Bulma for CSS Framework
 gem 'bulma-rails', '~> 0.8.0'
 
+# Use Devise for User Authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
