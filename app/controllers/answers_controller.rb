@@ -1,10 +1,12 @@
 class AnswersController < ApplicationController
   def index
-    @answers = Question.find_by_id(params[:id]).answers.all
+    @answers = Question.find_by_id(params[:question_id]).answers.all
   end
 
   def create
-    @answer = Question.find_by_id(params[:id]).create(answer_params)
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.create(answer_params)
+    redirect_to question_path(@question)
   end
 
   def show
@@ -21,6 +23,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:answer, :question_id, :user_id)
+    params.require(:answer).permit(:answer)
   end
 end

@@ -1,0 +1,12 @@
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+  <p>
+    <strong>Answered by:</strong>
+    <%= answer.user.email %>
+  </p>
+ 
+  <p>
+    <strong>Answer:</strong>
+    <%= answer.answer %>
+  </p>
+<% end %>

@@ -1,0 +1,10 @@
+<h2>Add an answer:</h2>
+<%= form_with(model: [ @question, @question.answers.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :answer %><br>
+    <%= form.text_area :answer %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
