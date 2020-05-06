@@ -8,7 +8,13 @@ class User < ApplicationRecord
 
   has_many :questions
 
+  has_one_attached :avatar
+
   def current_user?(user)
     user == current_user
+  end
+
+  def avatar_attachment_path
+    avatar.attached? ? avatar : 'default_avatar.svg'
   end
 end
