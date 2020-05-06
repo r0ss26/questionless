@@ -111,9 +111,11 @@
           <%= link_to  "Sign up", new_user_registration_path, class: "button is-primary" %>
           <%= link_to  "Sign in", new_user_session_path, class: "button is-light" %>
           <% end %>
+          <%= link_to new_question_path do %>
           <button class="button is-light">
             <span>Add Question</span>
           </button>
+          <% end %>
         </div>
       </div>
     </div>
