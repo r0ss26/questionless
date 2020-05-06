@@ -12,6 +12,45 @@
  *
  *= require_tree .
  *= require_self
+ *= require font_awesome5
  */
 
 @import "bulma";
+
+/* Style the navbar */
+
+.navbar {
+  /* width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
+}
+
+.navbar-logo img {
+  width: 25px;
+  height: 25px;
+  margin-right: 0px;
+  padding-left: 0px;
+}
+
+.navbar-menu .buttons a {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+}
+
+.navbar-menu .buttons a:hover {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: inherit;
+  padding: 0;
+}
+
+#search {
+  padding-top: 5px;
+}
+
+#navbar-avatar {
+  margin-left: 5px;
+  margin-right: 5px;
+}

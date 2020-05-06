@@ -13,4 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require font_awesome5
+//= require activestorage
 //= require_tree .
+//= require custom

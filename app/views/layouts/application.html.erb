@@ -3,16 +3,16 @@
 
 <head>
   <title>Questionless</title>
+  <%= favicon_link_tag asset_path('questionless.png') %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-  <%= render  "shared/error" %>
   <%= render  "shared/navbar" %>
+  <%= render  "shared/error" %>
   <br />
   <div class="columns">
     <div class="column is-1"></div>

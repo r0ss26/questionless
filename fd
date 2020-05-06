@@ -1,0 +1,74 @@
+[33mcommit ec6b201796c68ad5de696c8e637cc8deefb9f2b9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: f1ae470 06888be
+Author: MorganBat <60865146+MorganBat@users.noreply.github.com>
+Date:   Wed May 6 17:33:24 2020 +1000
+
+    Merge pull request #1 from r0ss26/views-development
+    
+    Navbar work
+
+[33mcommit 06888be0e1aa7ad2f1a709f43a902ef7d9f4c380[m[33m ([m[1;31morigin/views-development[m[33m)[m
+Author: Morgan <morgan.batterham@gmail.com>
+Date:   Wed May 6 17:32:56 2020 +1000
+
+    navbar work
+
+[33mcommit d577474eef01c9798f078a6c3d82a7040a2320e7[m
+Author: Morgan <morgan.batterham@gmail.com>
+Date:   Wed May 6 17:19:00 2020 +1000
+
+    initial navbar work
+
+[33mcommit 739a9e13ba23eecdd42c543fb4f0c9fda80f6b7c[m
+Author: Morgan <morgan.batterham@gmail.com>
+Date:   Wed May 6 16:33:08 2020 +1000
+
+    added favicon
+
+[33mcommit 25ed4ad1bc841cba7dc657327483438fbed3d0d2[m
+Author: Morgan <morgan.batterham@gmail.com>
+Date:   Wed May 6 16:05:04 2020 +1000
+
+    changed root route to landing page
+
+[33mcommit f1ae470b60b71289914443e58478ca3b6deac44f[m
+Author: Duke <duke.raphael.ng@gmail.com>
+Date:   Wed May 6 15:48:38 2020 +1000
+
+    Basic configuration with question and user models
+
+[33mcommit 6cd39cdcfc86777aa9fd18db1e61ceff2f367592[m
+Author: Duke <duke.raphael.ng@gmail.com>
+Date:   Wed May 6 15:29:37 2020 +1000
+
+    Add User model ; Generate Question Scaffold; Link 2 together
+
+[33mcommit fda3dce587f1977e3b6de8fe430737b8fb0f3656[m
+Author: Duke <duke.raphael.ng@gmail.com>
+Date:   Wed May 6 15:23:42 2020 +1000
+
+    Add Devise gem
+
+[33mcommit 560ea6f4c93baa9e6f3972e805882ad435753202[m
+Author: Duke <duke.raphael.ng@gmail.com>
+Date:   Wed May 6 15:20:13 2020 +1000
+
+    Add Bulma
+
+[33mcommit 9c1d4052ad9238162d9d15c852cb87aed6c29af1[m
+Author: Morgan <morgan.batterham@gmail.com>
+Date:   Wed May 6 15:06:07 2020 +1000
+
+    added Morgan to README
+
+[33mcommit 27ffa2b49eb351f1ca3d18185d6ec1741a07fcba[m
+Author: Duke <duke.raphael.ng@gmail.com>
+Date:   Wed May 6 14:55:57 2020 +1000
+
+    first commit
+
+[33mcommit fa1dc74aa3d322d91144bbfa7ed622530bfc3d2d[m
+Author: Ross Baker <rossbaker32@gmail.com>
+Date:   Wed May 6 14:35:16 2020 +1000
+
+    First Commit
