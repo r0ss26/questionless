@@ -1,11 +1,5 @@
 <% @user.employments.each do |employment| %>
 <p>
-  <%= employment.position %>
-  at
-  <%= employment.company %>
-
-  <%= employment.start_year %>
-  -
-  <%= employment.end_year%>
+  <%= employment.position %> at <%= employment.company %> <%= employment.start_year %> - <%= employment.end_year%>
 </p>
 <% end %>

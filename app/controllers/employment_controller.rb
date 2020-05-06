@@ -31,7 +31,7 @@ class EmploymentController < ApplicationController
   def update
     respond_to do |format|
       if @employment.update(employment_params)
-        format.html { redirect_to @employment, notice: 'Employment was successfully updated.' }
+        format.html { redirect_to profile_path(current_user), notice: 'Employment was successfully updated.' }
         format.json { render :show, status: :ok, location: @employment }
       else
         format.html { render :edit }
@@ -43,7 +43,7 @@ class EmploymentController < ApplicationController
   def destroy
     @employment.destroy
     respond_to do |format|
-      format.html { redirect_to employments_url, notice: 'Employment was successfully destroyed.' }
+      format.html { redirect_to profile_path(current_user), notice: 'Employment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -60,6 +60,6 @@ class EmploymentController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def employment_params
-    params.require(:employment).permit(:company, :start_year, :end_year, :currently)
+    params.require(:employment).permit(:position, :company, :start_year, :end_year, :currently)
   end
 end
