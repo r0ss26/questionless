@@ -14,6 +14,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "New Question"
 
+    fill_in "Title", with: @question.title
     fill_in "User", with: @question.user_id
     click_on "Create Question"
 
@@ -25,6 +26,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "Edit", match: :first
 
+    fill_in "Title", with: @question.title
     fill_in "User", with: @question.user_id
     click_on "Update Question"
 
