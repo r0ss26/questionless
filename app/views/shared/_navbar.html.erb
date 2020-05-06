@@ -1,29 +1,117 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-logo">
-    <%= link_to image_tag("questionless.png", :alt => "Questionless"), root_path %>
-    <%= link_to "Home", root_path %>
+<nav class="navbar" role="navigation" aria-label="main navigation" style="margin-left: 8rem; margin-right:8rem">
+  <div class="navbar-brand">
+    <%= link_to root_path, class:"navbar-item text-brand"  do %>
+    <span class="icon"><%= image_tag("questionless.png", :alt => "Questionless") %></i></span>
+    <p style="font-weight: 900; letter-spacing: 1px"> Questionless </p>
+    <% end %>
+    <a role="button" class="navbar-burger burger" onclick="dropdownToggle('navbar-menu')" aria-label="menu" aria-expanded="false" data-target="dropdown-menu-navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-  <div class = "navbar-answer">
-    <%# <%= link_to  "Answer", answers_path %>
-    Answer
-  </div>
-  <div class = "navbar-spaces">
-    <%# <%= link_to  "Spaces", spaces_path %>
-    Spaces
-  </div>
-  <div class = "navbar-notifications">
-    <%# <%= link_to  "Notifications", notifications_path %>
-    Notifications
-  </div>
-  <div class = "navbar-search">
-    <input type = "text" placeholder = "Search Questionless">
-  </div>
-  <div class = "navbar-profile">
-    <%# <%= link_to image_tag("profile.jpg"), profile_path %>
-    Profile
-  </div>
-  <div class = "navbar-question">
-    <%# <%= link_to  "Add Question", questions_path %>
-    Add Questions
+
+  <div class="navbar-menu" id="dropdown-menu-navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <button class="button is-light">
+            <span class="icon"><i class="fas fa-pager"></i></span>
+            <span>Home</span>
+          </button>
+          <button class="button is-light">
+            <span class="icon"><i class="far fa-edit"></i></span>
+            <span>Answer</span>
+          </button>
+
+          <button class="button is-light">
+            <span class="icon"><i class="fas fa-users"></i></span>
+            <span>Spaces</span>
+          </button>
+
+          <button class="button is-light">
+            <span class="icon"><i class="far fa-bell"></i></span>
+            <span>Notifications</span>
+          </button>
+
+          <div class="field" id="search">
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Search Questionless">
+              <span class="icon is-left">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+
+          <% if user_signed_in? %>
+          <div class="dropdown is-right" id="dropdown-menu-user-control">
+            <div class="dropdown-trigger" onclick="dropdownToggle('user-control')">
+              <div aria-haspopup="true" aria-controls="dropdown-menu-user-control">
+                <button class="button is-light" id="navbar-avatar">
+                  <span style="border-radius: 9999px;">Profile<%#= link_to  image_tag(current_user.avatar_attachment_path), user_article_path(current_user) %></span>
+                </button>
+              </div>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu-user-control" role="menu">
+              <div class="dropdown-content">
+                <p class="dropdown-item"><%#= image_tag(current_user.avatar_attachment_path) %></p>
+                <p class="dropdown-item"><%= current_user.email %></p>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                  Messages
+                </a>
+                <a href="#" class="dropdown-item">
+                  Create Ad
+                </a>
+                <a href="#" class="dropdown-item">
+                  Stats
+                </a>
+                <a href="#" class="dropdown-item">
+                  Your Content
+                </a>
+                <a href="#" class="dropdown-item">
+                  Bookmarks
+                </a>
+                <a href="#" class="dropdown-item">
+                  Drafts
+                </a>
+                <hr class="dropdown-divider">
+                <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
+                <a href="#" class="dropdown-item">
+                  Languages
+                </a>
+                <a href="#" class="dropdown-item">
+                  Help
+                </a>
+                <%= link_to  "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item">
+                  Profile
+                </a>
+                <a href="#" class="dropdown-item">
+                  Help
+                </a>
+                <hr class="dropdown-divider">
+                <div class="dropdown-item">
+                  <a href="#">About</a> -
+                  <a href="#">Careers</a> -
+                  <a href="#">Terms</a> -
+                  <a href="#">Privacy</a> -
+                  <a href="#">Acceptable Use</a> -
+                  <a href="#">Businesses</a> -
+                </div>
+              </div>
+            </div>
+          </div>
+          <% else %>
+          <%= link_to  "Sign up", new_user_registration_path, class: "button is-primary" %>
+          <%= link_to  "Sign in", new_user_session_path, class: "button is-light" %>
+          <% end %>
+          <button class="button is-light">
+            <span>Add Question</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

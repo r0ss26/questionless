@@ -1,0 +1,29 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-logo">
+    <%= link_to image_tag("questionless.png", :alt => "Questionless"), root_path %>
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class = "navbar-answer">
+    <%# <%= link_to  "Answer", answers_path %>
+    Answer
+  </div>
+  <div class = "navbar-spaces">
+    <%# <%= link_to  "Spaces", spaces_path %>
+    Spaces
+  </div>
+  <div class = "navbar-notifications">
+    <%# <%= link_to  "Notifications", notifications_path %>
+    Notifications
+  </div>
+  <div class = "navbar-search">
+    <input type = "text" placeholder = "Search Questionless">
+  </div>
+  <div class = "navbar-profile">
+    <%# <%= link_to image_tag("profile.jpg"), profile_path %>
+    Profile
+  </div>
+  <div class = "navbar-question">
+    <%# <%= link_to  "Add Question", questions_path %>
+    Add Questions
+  </div>
+</nav>
