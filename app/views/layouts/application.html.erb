@@ -13,7 +13,14 @@
 <body>
   <%= render  "shared/error" %>
   <%= render  "shared/navbar" %>
-  <%= yield %>
+  <br />
+  <div class="columns">
+    <div class="column is-1"></div>
+    <div class="column">
+      <%= yield %>
+    </div>
+    <div class="column is-1"></div>
+  </div>
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :questions
+  resources :profiles, only: [:show]
   devise_for :users
   # get 'pages/index'
 
