@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Create privacy page for facebook oauth
+  get "/privacy", to: 'pages#privacy'
+
   devise_scope :user do
     authenticated :user do
       root 'questions#index', as: :authenticated_root
@@ -23,9 +26,6 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show] do
   end
-
-  # Create privacy page for facebook oauth
-  get "/privacy", to: 'pages#privacy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
