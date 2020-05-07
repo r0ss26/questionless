@@ -27,19 +27,20 @@ require 'faker'
   end
 end
 
-# Question.all.each do |question|
-#   User.all.each do |_user|
-#     count = 0
-#     [true, false].sample
+Question.all.each do |question|
+  count = 0
+  User.all.each do |user|
+    [true, false].sample
 
-#     if true
-#       question.answers.create(
-#         answer: Faker::Lorem.paragraphs(number: 5).join(' ')
-#       )
-#       count += 1
-#     end
+    if true
+      question.answers.create(
+        answer: Faker::Lorem.paragraphs(number: 5).join(' '),
+        user_id: user.id
+      )
+      count += 1
+      puts "Answer no.#{count} created"
+    end
 
-#     puts "Answer no.#{count} created"
-#     # question.answers.create(Faker::Lorem.paragraph.join(' ').merge(user_id: user.id))
-#   end
-# end
+    # question.answers.create(Faker::Lorem.paragraph.join(' ').merge(user_id: user.id))
+  end
+end
