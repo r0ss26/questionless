@@ -27,16 +27,24 @@
     grid-row: 2;
 }
 
+.logo {
+    font-size: 32px;
+    padding-bottom: 40px;
+}
+
 .signup-or-login {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 200px 200px;
 }
 
 .signup {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .login {
-    color: green;
+    font-size: 16px;
+    text-align: center;
 }
