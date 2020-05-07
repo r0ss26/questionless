@@ -6,10 +6,10 @@
         <span class = "signup-or-login">
             <span class = "signup">
                 <p>
-                    <button>Sign up with Google</button>
+                    <%= link_to  "Sign up with Google", new_user_registration_path, class: "button is-light" %>
                 </p>
                 <p>
-                    <button>Sign up with Facebook</button>
+                    <%= link_to  "Sign up with Facebook", new_user_registration_path, class: "button is-light" %>
                 </p>
                 <%= link_to  "Sign up with email", new_user_registration_path, class: "button is-light" %>
             </span>

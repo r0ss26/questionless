@@ -10,8 +10,6 @@ Rails.application.routes.draw do
       root 'pages#landing', as: :unauthenticated_root
     end
   end
-  get '/pages/login', to: 'pages#login', as: 'login'
-  get '/pages/sign_up', to: 'pages#sign_up', as: 'sign_up'
 
   devise_for :users
 
