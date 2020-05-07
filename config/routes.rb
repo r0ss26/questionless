@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Create privacy page for facebook oauth
+  get "/privacy", to: 'pages#privacy'
+
   devise_scope :user do
     authenticated :user do
       root 'questions#index', as: :authenticated_root
@@ -10,18 +13,20 @@ Rails.application.routes.draw do
       root 'pages#landing', as: :unauthenticated_root
     end
   end
-  get '/pages/landing', to: 'pages#landing'
-  get '/pages/login', to: 'pages#login', as: 'login'
-  get '/pages/email_sign_up', to: 'pages#email_sign_up', as: 'email_sign_up'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users do
     resources :employment, except: [:index]
   end
 
   resources :questions do
-    resources :answers
+    resources :answers do
+      member do 
+        put "like", to: "answers#upvote"
+        put "dislike", to: "answers#downvote"
+      end
+    end
   end
 
   resources :profiles, only: [:show] do
