@@ -63,4 +63,8 @@ Rails.application.configure do
 
   # Use Devise Config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  # Enabling bg image
+  config.public_file_server.enabled = true
+
 end

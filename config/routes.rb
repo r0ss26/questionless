@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'questions#index'
+  root to: 'pages#landing'
+
+  get '/pages/landing', to: 'pages#landing'
+  get '/pages/login', to: 'pages#login', as: 'login'
+  get '/pages/email_sign_up', to: 'pages#email_sign_up', as: 'email_sign_up'
   # get 'pages/index'
   devise_for :users
 
