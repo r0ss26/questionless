@@ -20,27 +20,35 @@ require 'faker'
 
   [*(1..3)].sample.times do |count2|
     new_question = new_user.questions.create(
-      title: Faker::Lorem.sentence + ' ?'
+      title: Faker::Lorem.sentence.chop + '?'
     )
 
     puts "Question no.#{count2} created"
   end
 end
 
+# questions = []
+# [*(0..Question.all.count)].sample.times do
+#   questions.push(Question.all.sample)
+# end
+# questions = questions.uniq
+
+count = 0
+count2 = 0
 Question.all.each do |question|
-  count = 0
-  User.all.each do |user|
-    [true, false].sample
+  count2 += 1
+  users = []
+  [*(0..7)].sample.times do
+    users.push(User.all.sample)
+  end
+  users = users.uniq
 
-    if true
-      question.answers.create(
-        answer: Faker::Lorem.paragraphs(number: 5).join(' '),
-        user_id: user.id
-      )
-      count += 1
-      puts "Answer no.#{count} created"
-    end
-
-    # question.answers.create(Faker::Lorem.paragraph.join(' ').merge(user_id: user.id))
+  users.each do |user|
+    question.answers.create(
+      answer: Faker::Lorem.paragraphs(number: 5).join(' '),
+      user_id: user.id
+    )
+    count += 1
+    puts "Question no.#{count2} - answer no.#{count} created"
   end
 end

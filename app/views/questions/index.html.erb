@@ -25,7 +25,7 @@
         <p><%= question.answers.count %> Answer(s)</p>
         <footer>
 
-          <button class="button is-light" onclick="answer()">
+          <button class="button is-light" onclick="answer(<%=question.id%>)">
             <span>Answer</span>
           </button>
 
@@ -42,7 +42,7 @@
           </button>
 
         </footer>
-        <div id="answer_form">
+        <div class="answer_form" id="answer_form_<%=question.id%>" style="display:none;">
           <%= render "shared/new_answer", question: question %>
         </div>
         <% end %>
