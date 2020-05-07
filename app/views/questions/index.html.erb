@@ -32,7 +32,7 @@
                 <br />
                 <p><%= question.answers.count %> Answer(s)</p>
                 <br />
-                <footer>
+                <div>
                   <button class=" button is-light" onclick="answer(<%=question.id%>)">
                     <span>Answer</span>
                   </button>
@@ -52,7 +52,7 @@
                   <button class="button">
                     <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
                   </button>
-                </footer>
+                </div>
                 <div class="answer_form" id="answer_form_<%=question.id%>" style="display:none;">
                   <%= render "shared/new_answer", question: question %>
                 </div>
@@ -63,11 +63,11 @@
           <% end %>
         </table>
       </div>
-      <footer class="card-footer">
+      <div class="card-footer">
         <div class="card-footer-item" style="text-align:center;">
           <a href="#">More</a>
         </div>
-      </footer>
+      </div>
     </div>
   </div>
   <div class="column">
