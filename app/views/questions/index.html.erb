@@ -1,25 +1,59 @@
-<p id="notice"><%= notice %></p>
+<div class="columns">
+  <div class="column is-2">
+    <h3><b>Questions</b></h3>
+    <hr class="dropdown-divider">
+    <h4>Questions for You</h4>
+    <h4>Answer Requests</h4>
+    <h4>Answer Later</h4>
+  </div>
+  <div class="column is-8">
+    <div class="card">
 
-<h1>Questions</h1>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-icon">
+          <button class="button" style="background: red;">
+            <span class="icon"><i class="fas fa-star"></i></span>
+          </button>
+        </div>
+        <div class="card-header-title">Questions For You</div>
+      </div>
+      <div class="card-content">
+        <% @questions.each do |question| %>
+        <%= link_to question.title, question_path(question) %>
+        <p><%= question.answers.count %></p>
+        <footer>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <button class="button is-light" onclick="answer()">
+            <span>Answer</span>
+          </button>
 
-  <tbody>
-    <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.title %></td>
-      <td><%= question.user.email %></td>
-      <td><%= link_to 'Show', question %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+          <button class="button is-light">
+            <span>Pass</span>
+          </button>
+
+          <button class="button is-light">
+            <span>Follow</span>
+          </button>
+
+          <button class="button is-light">
+            <span>More</span>
+          </button>
+
+        </footer>
+        <div id="answer_form">
+          <%= render "shared/new_answer", question: question %>
+        </div>
+        <% end %>
+      </div>
+      <footer class="card-footer">
+        <div class="card-footer-item" style="text-align:center;">
+          <a href="#">More</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="column">
+  </div>
+</div>
