@@ -90,5 +90,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'aws-sdk'
 gem 'aws-sdk-s3', '~> 1.63'
 
+# Omniauth integration
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # acts_as_votable
-gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_votable', "~> 0.10.0"
+
