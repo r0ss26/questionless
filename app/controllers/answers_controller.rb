@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!, only: %i[upvote downvote]
 
   def index
     @answers = Question.find_by_id(params[:question_id]).answers.all
@@ -33,7 +34,19 @@ class AnswersController < ApplicationController
     if @answer.user_id == current_user.id
       @answer.destroy
     end
-    redirect_to question_path(@question)
+    redirect_to question_path(1)
+  end
+
+  def upvote
+    @answer = Answer.find(params[:id])
+    @answer.upvote_by(current_user)
+    redirect_to question_path(params[:question_id])
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.downvote_by(current_user)
+    redirect_to question_path(params[:question_id])
   end
 
   private
