@@ -58,6 +58,9 @@ gem 'faker'
 # Use activestorage for storing files
 gem 'activestorage'
 
+# Use Omniauth
+gem 'omniauth'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -85,7 +88,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # AWS integration
 gem 'aws-sdk'
-gem "aws-sdk-s3", "~> 1.63"
+gem 'aws-sdk-s3', '~> 1.63'
 
 # Omniauth integration
 gem 'omniauth'
