@@ -6,13 +6,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy
 
-  has_many :employments
+  has_many :employments, dependent: :destroy
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   after_initialize :init
 
