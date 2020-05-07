@@ -52,9 +52,6 @@ gem 'jquery-rails'
 # Use font_awesome5_rails for icon
 gem 'font_awesome5_rails'
 
-# Use JQuery
-gem 'jquery-rails'
-
 # Use faker for seeding test files
 gem 'faker'
 
