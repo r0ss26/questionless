@@ -1,8 +1,19 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'questions#index'
-  # get 'pages/index'
+  devise_scope :user do
+    authenticated :user do
+      root 'questions#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'pages#landing', as: :unauthenticated_root
+    end
+  end
+  get '/pages/landing', to: 'pages#landing'
+  get '/pages/login', to: 'pages#login', as: 'login'
+  get '/pages/email_sign_up', to: 'pages#email_sign_up', as: 'email_sign_up'
+
   devise_for :users
 
   resources :users do

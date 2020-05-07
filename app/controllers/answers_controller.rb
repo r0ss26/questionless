@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class AnswersController < ApplicationController
-  before_action :authenticate_user!, only: %i[upvote downvote]
+  before_action :authenticate_user!
+  before_action :set_answer, only: %i[edit update destroy]
 
   def index
     @answers = Question.find_by_id(params[:question_id]).answers.all
@@ -11,30 +14,22 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question)
   end
 
-  def show
-    
-  end
+  def show; end
 
   def edit
-    set_answer
+    # set_answer
   end
 
   def update
-    set_answer
+    # set_answer
 
-    if @answer.user_id == current_user.id
-      @answer.update(answer_params)
-    end
+    @answer.update(answer_params) if @answer.user_id == current_user.id
     redirect_to question_path(@question)
   end
 
   def destroy
-    set_answer
-
-    if @answer.user_id == current_user.id
-      @answer.destroy
-    end
-    redirect_to question_path(1)
+    @answer.destroy if @answer.user_id == current_user.id
+    redirect_to question_path(@question)
   end
 
   def upvote
@@ -50,6 +45,7 @@ class AnswersController < ApplicationController
   end
 
   private
+
   def answer_params
     params.require(:answer).permit(:answer)
   end

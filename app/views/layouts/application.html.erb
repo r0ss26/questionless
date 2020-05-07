@@ -11,16 +11,22 @@
 </head>
 
 <body>
+<% unless controller.controller_name == 'pages' && controller.action_name == 'landing' %>
   <%= render  "shared/navbar" %>
   <%= render  "shared/error" %>
+
   <br />
   <div class="columns">
     <div class="column is-1"></div>
     <div class="column">
+<% end %>
       <%= yield %>
+<% unless controller.controller_name == 'pages' && controller.action_name == 'landing' %>
+
     </div>
     <div class="column is-1"></div>
   </div>
+<% end %>
 </body>
 
 </html>

@@ -16,7 +16,7 @@
   <% end %>
   </span>
   <span>
-    <%= link_to dislike_question_answer_path(answer, answer_id: answer.id), method: :put do %>
+    <%= link_to dislike_question_answer_path(@question, answer), method: :put do %>
     Downvote
     <%= answer.get_downvotes.size %>
     <% end %>
