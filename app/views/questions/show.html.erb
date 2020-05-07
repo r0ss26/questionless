@@ -43,8 +43,10 @@
   <%= render "shared/new_answer", question: @question %>
 </div>
 
+<% if @question.user == current_user %>
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+<% end %>
 
 <h3 class="title is-3"><%= @question.answers.count %> Answer(s)</h3>
 
