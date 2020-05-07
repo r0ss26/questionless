@@ -1,7 +1,8 @@
 <div class = "bg-image">
     <div class = "container">
-        LANDING PAGE 
-
+        <span class="logo">    
+            Questionless
+        </span>
         <span class = "signup-or-login">
             <span class = "signup">
                 <p>
@@ -10,10 +11,12 @@
                 <p>
                     <button>Sign up with Facebook</button>
                 </p>
-                <%= link_to  "Sign up with email", email_sign_up_path %>
+                <%= link_to  "Sign up with email", new_user_registration_path, class: "button is-light" %>
             </span>
             <span class = "login">
-                <%= link_to  "Log in", login_path %>
+                <p>Already have an account?<br />
+                <%= link_to  "Log in", new_user_registration_path, class: "button is-primary" %>
+                </p>
             </span>
     </div>
 </div>
