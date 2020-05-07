@@ -27,16 +27,16 @@
 
 <div class="buttons">
   <button class="button is-light"><span>
-      <%= link_to like_question_answer_path(@question, answer), method: :put do %>
+      <%#= link_to like_question_answer_path(@question, answer), method: :put do %>
       Upvote
       <%= answer.get_upvotes.size %>
-      <% end %>
+      <%# end %>
     </span></button>
   <button class="button is-light"><span>
-      <%= link_to dislike_question_answer_path(@question, answer), method: :put do %>
+      <%#= link_to dislike_question_answer_path(@question, answer), method: :put do %>
       Downvote
       <%= answer.get_downvotes.size %>
-      <% end %>
+      <%# end %>
     </span></button>
   <button class="button is-light">Share</button>
   <button class="button is-light">Bookmark</button>
