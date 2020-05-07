@@ -995,6 +995,7 @@ GEM
       railties (>= 4.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -1026,6 +1027,9 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     pg (1.2.3)
     public_suffix (4.0.4)
@@ -1139,6 +1143,7 @@ DEPENDENCIES
   jquery
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  omniauth
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.2)
