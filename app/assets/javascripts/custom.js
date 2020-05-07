@@ -5,8 +5,8 @@ function dropdownToggle(position) {
 }
 
 // Toggle open and close form
-function answer() {
-  var x = document.getElementById("answer_form");
+function answer(question) {
+  var x = document.getElementById(`answer_form_${question}`);
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
