@@ -86,3 +86,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # AWS integration
 gem 'aws-sdk'
 gem "aws-sdk-s3", "~> 1.63"
+
+# Omniauth integration
+gem 'omniauth'
+gem 'omniauth-facebook'
