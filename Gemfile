@@ -86,3 +86,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # AWS integration
 gem 'aws-sdk'
 gem "aws-sdk-s3", "~> 1.63"
+
+# acts_as_votable
+gem 'acts_as_votable', "~> 0.10.0"

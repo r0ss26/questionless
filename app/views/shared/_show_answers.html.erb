@@ -9,6 +9,18 @@
     <strong>Answer:</strong>
     <%= answer.answer %>
   </p>
+  <span>
+    <%= link_to like_question_answer_path(@question, answer), method: :put do %>
+    Upvote
+    <%= answer.get_upvotes.size %>
+  <% end %>
+  </span>
+  <span>
+    <%= link_to dislike_question_answer_path(@question, answer), method: :put do %>
+    Downvote
+    <%= answer.get_downvotes.size %>
+    <% end %>
+  </span>
   <p>
     <% if current_user && answer.user_id == current_user.id %>
       <%= link_to 'Edit', edit_question_answer_path(@question.id, answer.id) %>
