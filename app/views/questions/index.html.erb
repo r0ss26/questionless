@@ -22,7 +22,7 @@
       <div class="card-content">
         <% @questions.each do |question| %>
         <%= link_to question.title, question_path(question) %>
-        <p><%= question.answers.count %></p>
+        <p><%= question.answers.count %> Answer(s)</p>
         <footer>
 
           <button class="button is-light" onclick="answer()">
