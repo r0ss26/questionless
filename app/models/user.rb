@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   def init
     self.name ||= email.split('@')[0]
+    self.description ||= ''
   end
 
   def current_user?(user)

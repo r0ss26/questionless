@@ -1,17 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+<div class="buttons">
+  <button class="button">
+    Tag
+  </button>
+  <button class="button">
+    Tag
+  </button>
+  <button class="button">
+    Tag
+  </button>
+</div>
 
-<p>
-  <strong>User:</strong>
+<h1 class="title is-1"><%= @question.title %></h1>
+
+<p> By
   <%= @question.user.email %>
 </p>
 
-<%= render "shared/show_answers" %>
-<%= render "shared/new_answer", question: @question %>
+<div class="buttons">
+  <button class=" button is-light" onclick="answer(<%=@question.id%>)">
+    <span>Answer</span>
+  </button>
+
+  <button class="button is-light">
+    <span>Pass</span>
+  </button>
+
+  <button class="button is-light">
+    <span>Follow</span>
+  </button>
+
+  <button class="button is-light">
+    <span>More</span>
+  </button>
+
+  <button class="button">
+    <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
+  </button>
+</div>
+<div class="answer_form" id="answer_form_<%=@question.id%>" style="display:none;">
+  <%= render "shared/new_answer", question: @question %>
+</div>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
+
+<h3 class="title is-3"><%= @question.answers.count %> Answer(s)</h3>
+
+<hr />
+
+<%= render "shared/show_answers" %>
