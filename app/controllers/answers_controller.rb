@@ -28,10 +28,20 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    # set_answer
-
     @answer.destroy if @answer.user_id == current_user.id
     redirect_to question_path(@question)
+  end
+
+  def upvote
+    @answer = Answer.find(params[:id])
+    @answer.upvote_by(current_user)
+    redirect_to question_path(params[:question_id])
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    @answer.downvote_by(current_user)
+    redirect_to question_path(params[:question_id])
   end
 
   private

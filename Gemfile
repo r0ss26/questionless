@@ -90,3 +90,7 @@ gem "aws-sdk-s3", "~> 1.63"
 # Omniauth integration
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+# acts_as_votable
+gem 'acts_as_votable', "~> 0.10.0"
+
