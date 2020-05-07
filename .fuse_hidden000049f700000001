@@ -39,27 +39,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Bulma for CSS Framework
-gem 'bulma-extensions-rails'
 gem 'bulma-rails', '~> 0.8.0'
 
 # Use Devise for User Authentication
 gem 'devise'
-
-# Correct JS problem in destroy path for user session # https://stackoverflow.com/questions/6567863/no-route-matches-get-users-sign-out
-gem 'jquery'
-gem 'jquery-rails'
-
-# Use font_awesome5_rails for icon
-gem 'font_awesome5_rails'
-
-# Use JQuery
-gem 'jquery-rails'
-
-# Use faker for seeding test files
-gem 'faker'
-
-# Use activestorage for storing files
-gem 'activestorage'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -85,7 +68,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# AWS integration
-gem 'aws-sdk'
-gem "aws-sdk-s3", "~> 1.63"

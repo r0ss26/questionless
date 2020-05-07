@@ -1,14 +1,14 @@
 <h2>Add an answer:</h2>
 <% if current_user %>
-<%= form_with(model: [ @question, @question.answers.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :answer %><br>
-    <%= form.text_area :answer %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with(model: [ question, question.answers.build ], local: true) do |form| %>
+<p>
+  <%= form.label :answer %><br>
+  <%= form.text_area :answer %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
 <% end %>
 <% else %>
-  <h3>You must be logged in to leave an answer</h3>
+<h3>You must be logged in to leave an answer</h3>
 <% end %>
