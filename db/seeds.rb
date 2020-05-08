@@ -15,12 +15,17 @@ require 'faker'
     email: Faker::Internet.email,
     password: Faker::Internet.password
   )
+  
+  new_user.update(
+    name: Faker::Name.name_with_middle,
+    description: Faker::Lorem.sentence
+  )
 
   puts "User no.#{count} created"
 
   [*(1..3)].sample.times do |count2|
     tags = []
-    for i in 0..rand(5)
+    (0..rand(5)).each do |_i|
       tags.push(Faker::Verb.past)
     end
     new_question = new_user.questions.create(
