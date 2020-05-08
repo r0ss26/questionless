@@ -47,6 +47,9 @@ body {
         margin-right: 10px;
         padding: 0;
       }
+      a.dropdown-item {
+        width:180px;
+      }
       a:hover {
         background-color: inherit;
       }
