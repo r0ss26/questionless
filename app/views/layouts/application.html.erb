@@ -11,7 +11,9 @@
 </head>
 
 <body>
-  <% unless controller.controller_name == 'pages' && controller.action_name == 'landing' %>
+  <% if controller.controller_name == 'pages' && controller.action_name == 'landing' %>
+  <div class="bg-image">
+  <% else %>
   <%= render  "shared/navbar" %>
   <%= render  "shared/error" %>
   <% end %>
@@ -26,7 +28,9 @@
   </div>
 
 
-<%= render "shared/footer" %>
+  <footer class="footer">
+        Built by <a href="https://linktr.ee/RossAndrewBaker" target="_blank">Ross</a>, <a href="https://linktr.ee/dukeraphaelng" target="_blank">Duke</a> and <a href="https://linktr.ee/morganbat" target="_blank">Morgan</a>.
+  </footer>
 
 </body>
 
