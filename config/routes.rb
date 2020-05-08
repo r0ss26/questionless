@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   # Create privacy page for facebook oauth
-  get "/privacy", to: 'pages#privacy'
+  get '/privacy', to: 'pages#privacy'
 
   devise_scope :user do
     authenticated :user do
@@ -20,12 +20,19 @@ Rails.application.routes.draw do
     resources :employment, except: [:index]
   end
 
+  get '/bookmarks', to: 'answers#bookmark_list', as: :bookmark
+
   resources :questions do
     resources :answers do
-      member do 
-        put "like", to: "answers#upvote"
-        put "dislike", to: "answers#downvote"
+      member do
+        put 'like', to: 'answers#upvote'
+        put 'dislike', to: 'answers#downvote'
       end
+
+      put '/bookmark', to: 'answers#toggle_bookmark', on: :member
+
+      # put :bookmark_answer, on: :member
+      # put '/dismiss_article', to: 'answers#dismiss_article', on: :member
     end
   end
 

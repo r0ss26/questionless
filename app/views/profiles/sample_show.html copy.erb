@@ -10,22 +10,22 @@
         <%= @user.name %>
       </div>
     </div>
-    <%= @user.description %>
-    <div class="buttons">
-      <button class="button is-light is-small">Follow</button>
-      <button class="button is-light is-small">Notify Me</button>
-      <button class="button is-light is-small">Ask Question</button>
-      <button class="button is-light is-small">...</button>
+    <%#= @user.description %>
+    <div>
+      <button>Follow</button>
+      <button>Notify Me</button>
+      <button>Ask Question</button>
+      <button>...</button>
     </div>
     <hr />
-    <div class="buttons">
-      <button class="button is-light is-small">Profile</button>
-      <button class="button is-light is-small">Answers</button>
-      <button class="button is-light is-small">Questions</button>
-      <button class="button is-light is-small">Shares</button>
-      <button class="button is-light is-small">Posts</button>
-      <button class="button is-light is-small">Followers</button>
-      <button class="button is-light is-small">More</button>
+    <div>
+      <button>Profile</button>
+      <button>Answers</button>
+      <button>Questions</button>
+      <button>Shares</button>
+      <button>Posts</button>
+      <button>Followers</button>
+      <button>More</button>
     </div>
     <hr />
   </div>
@@ -33,6 +33,11 @@
     <div class="cred_high">
       <h2>Credentials & Highlights</h2>
       <hr>
+      <p>Lives in Melbourne</p>
+      <p>500 content views</p>
+      <p>Active in 8 Spaces</p>
+      <p>Knows Japanese</p>
+      <p>Active in Spanish</p>
       <%= render  "employment/employment" %>
       <%= link_to  "Add employment credential", new_user_employment_path(current_user) %>
     </div>
@@ -41,12 +46,15 @@
     <div class="spaces">
       <h2>Spaces</h2>
       <hr>
+      <p>Dan's Pub</p>
     </div>
     <br />
     <br />
     <div class="knows_about">
       <h2>Knows About</h2>
       <hr />
+      <p>Language</p>
+      <p>English</p>
     </div>
   </div>
 </div>

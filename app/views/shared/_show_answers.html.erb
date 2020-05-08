@@ -1,49 +1,5 @@
 <% @question.answers.each do |answer| %>
-<% if answer.user %>
-<div>
-  <div class="field is-grouped">
-    <%= image_tag answer.user.avatar_attachment_path, class:"avatar" %>
 
-    <h4 class="title is-4">
-      <%= answer.user.name%>
-    </h4>
-  </div>
-  <h5 class="subtitle is-4">
-    <%= answer.user.description%>
-  </h5>
-</div>
+<%= render  "components/answer", answer: answer %>
 
-<p>
-  <%= answer.answer %>
-</p>
-<p>
-  <% if current_user && answer.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_question_answer_path(@question.id, answer) %>
-  <%= link_to 'Delete', [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?'} %>
-  <% end %>
-</p>
-
-<br />
-
-<div class="buttons">
-  <button class="button is-light"><span>
-      <%= link_to like_question_answer_path(@question, answer), method: :put do %>
-      Upvote
-      <%= answer.get_upvotes.size %>
-      <% end %>
-    </span></button>
-  <button class="button is-light"><span>
-      <%= link_to dislike_question_answer_path(@question, answer), method: :put do %>
-      Downvote
-      <%= answer.get_downvotes.size %>
-      <% end %>
-    </span></button>
-  <button class="button is-light">Share</button>
-  <button class="button is-light">Bookmark</button>
-  <button class="button is-light"><span class="icon"><i class="fas fa-ellipsis-h"></i></span></button>
-</div>
-
-<hr />
-
-<% end %>
 <% end %>
