@@ -4,7 +4,9 @@
     <%= image_tag answer.user.avatar_attachment_path, class:"avatar" %>
 
     <h4 class="title is-4">
+      <%= link_to profile_path(answer.user) do %>
       <%= answer.user.name%>
+      <% end %>
     </h4>
   </div>
   <h5 class="subtitle is-4">

@@ -22,53 +22,7 @@
       <div class="card-content">
         <table class="table is-bordered is-fullwidth">
           <% @questions.each do |question| %>
-
-          <tbody>
-            <tr>
-              <td>
-                <%= link_to question_path(question) do %>
-                <h1 class="title is-5"><%= question.title %></h1>
-                <% end %>
-                <br />
-                <p><%= question.answers.count %> Answer(s)</p>
-                <br />
-                <div>
-                  <button class=" button is-light" onclick="answer(<%=question.id%>)">
-                    <span>Answer</span>
-                  </button>
-
-                  <button class="button is-light">
-                    <span>Pass</span>
-                  </button>
-
-                  <button class="button is-light">
-                    <span>Follow</span>
-                  </button>
-
-                  <button class="button is-light">
-                    <span>More</span>
-                  </button>
-
-                  <button class="button">
-                    <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
-                  </button>
-                </div>
-                <div class="tags">
-                  <div class="buttons">
-                  <% question.tag_list.each do |tag| %>
-                  <div class="button">
-                    <%= link_to tag, tagged_questions_path(tag: tag) %>
-                  </div>
-                  <% end %></p>
-                  </div>
-                </div>
-                <div class="answer_form" id="answer_form_<%=question.id%>" style="display:none;">
-                  <%= render "shared/new_answer", question: question %>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-
+          <%= render  "components/question", question: question %>
           <% end %>
         </table>
       </div>

@@ -12,7 +12,9 @@
 <h1 class="title is-1"><%= @question.title %></h1>
 
 <p> By
+  <%= link_to profile_path(@question.user) do %>
   <%= @question.user.email %>
+  <% end %>
 </p>
 
 <div class="buttons">

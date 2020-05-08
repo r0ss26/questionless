@@ -12,6 +12,10 @@ class AnswersController < ApplicationController
     @answers = Question.find_by_id(params[:question_id]).answers.all
   end
 
+  def home
+    @answers = Answer.order(cached_votes_score: :desc)
+  end
+
   def create
     # @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answer_params.merge(user_id: current_user.id))
@@ -101,6 +105,8 @@ class AnswersController < ApplicationController
   end
 
   def redirect_to_question_path
-    redirect_back(fallback_location: question_path(@question))
+    redirect_back(fallback_location: question_path(params[:question_id]))
+    # question_path(params[:question_id])
+    # question_path(@question)
   end
 end
