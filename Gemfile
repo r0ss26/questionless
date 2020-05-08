@@ -97,3 +97,5 @@ gem 'omniauth-facebook'
 # acts_as_votable
 gem 'acts_as_votable', "~> 0.10.0"
 
+# Acts as taggable - for adding tags
+gem 'acts-as-taggable-on', '~> 6.0'
