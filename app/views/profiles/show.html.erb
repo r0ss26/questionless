@@ -10,7 +10,29 @@
         <%= @user.name %>
       </div>
     </div>
-    <%= @user.description %>
+    <div>
+      <%= @user.description %>
+      <div class="answer_form" id="answer_form_edit" style="display:none;">
+        <%= form_for(@user, as: :user, url: registration_path(:user), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @user %>
+        <div>
+          <%= f.text_field :description, autocomplete: "description"  %>
+        </div>
+        <div class="field">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Update" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <% if @user == current_user %>
+    <button class="button is-light is-small" onclick="answer('edit')">Edit</button><br><br>
+    <% end %>
+    <%# Need to make secure in the controller as well but not enough time %>
     <div class="buttons">
       <button class="button is-light is-small">Follow</button>
       <button class="button is-light is-small">Notify Me</button>
