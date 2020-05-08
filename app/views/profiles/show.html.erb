@@ -20,14 +20,28 @@
     <hr />
     <div class="buttons">
       <button class="button is-light is-small">Profile</button>
-      <button class="button is-light is-small">Answers</button>
-      <button class="button is-light is-small">Questions</button>
+      <button class="button is-light is-small" onclick="answer('answers')">Answers (<%= @answers.count %>)</button>
+      <button class="button is-light is-small" onclick="answer('questions')">Questions (<%= @questions.count %>)</button>
       <button class="button is-light is-small">Shares</button>
       <button class="button is-light is-small">Posts</button>
       <button class="button is-light is-small">Followers</button>
       <button class="button is-light is-small">More</button>
     </div>
     <hr />
+    <div>
+      <div class="answer_form" id="answer_form_answers" style="display:none;">
+        <% @answers.each do |answer| %>
+        <%= render  "components/answer", answer: answer %>
+        <% end %>
+      </div>
+      <div class="answer_form" id="answer_form_questions" style="display:none;">
+        <table class="table is-bordered is-fullwidth">
+          <% @questions.each do |question| %>
+          <%= render  "components/question", question: question %>
+          <% end %>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="column">
     <div class="cred_high">
