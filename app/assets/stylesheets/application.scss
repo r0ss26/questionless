@@ -20,6 +20,9 @@
 /* Style the navbar */
 
 body {
+    position: relative;
+    min-height: 100%;
+    width: 100vw;
     background-color: #dee0e1;
     .navbar {
         background-color: rgba(255, 255, 255, 1);
@@ -66,10 +69,13 @@ body {
         }
     }
     footer {
-        height: 0.5rem;
+        height: 30px;
         font-weight: 600;
-        position: fixed;
+        position: absolute;
         bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
     }
     // .answer_form {
     //   display: none;
