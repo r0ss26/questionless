@@ -19,8 +19,13 @@ require 'faker'
   puts "User no.#{count} created"
 
   [*(1..3)].sample.times do |count2|
+    tags = []
+    for i in 0..rand(5)
+      tags.push(Faker::Verb.past)
+    end
     new_question = new_user.questions.create(
-      title: Faker::Lorem.sentence.chop + '?'
+      title: Faker::Lorem.sentence.chop + '?',
+      tag_list: tags
     )
 
     puts "Question no.#{count2} created"

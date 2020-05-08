@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :questions do
-      get "tagged", on: :collection
+      get "tagged", on: :collection, as: "tagged"
     resources :answers do
       member do 
         put "like", to: "answers#upvote"
