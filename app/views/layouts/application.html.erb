@@ -11,7 +11,9 @@
 </head>
 
 <body>
-  <% unless controller.controller_name == 'pages' && controller.action_name == 'landing' %>
+  <% if controller.controller_name == 'pages' && controller.action_name == 'landing' %>
+  <div class="bg-image">
+  <% else %>
   <%= render  "shared/navbar" %>
   <%= render  "shared/error" %>
   <% end %>
