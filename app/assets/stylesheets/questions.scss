@@ -1,3 +1,16 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.answer_form h2 {
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+input#question_title {
+    width: 300px;
+    height: 80px;
+    border-radius: 5px;
+}
