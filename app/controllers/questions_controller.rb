@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
+  
     @question = current_user.questions.new(question_params)
 
     respond_to do |format|
@@ -64,6 +65,15 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
+    render :index
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -78,6 +88,8 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:title)
+    params.require(:question).permit(:title, :tag_list)
   end
+
+
 end
