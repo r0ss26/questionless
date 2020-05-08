@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_answer, only: %i[edit update destroy]
   before_action :set_answer, only: %i[upvote downvote toggle_bookmark]
-  before_action :set_question, only: %i[create toggle_bookmark]
+  before_action :set_question, only: %i[create toggle_bookmark upvote downvote]
 
   def index
     @answers = Question.find_by_id(params[:question_id]).answers.all
@@ -48,6 +48,7 @@ class AnswersController < ApplicationController
 
   def upvote
     # @answer = Answer.find(params[:id])
+    
     @answer.upvote_by(current_user)
 
     # redirect_to question_path(params[:question_id])

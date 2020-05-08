@@ -28,6 +28,15 @@
           <span class="icon"><i class="fas fa-ellipsis-h"></i></span>
         </button>
       </div>
+      <div class="tags">
+        <div class="buttons">
+          <% question.tag_list.each do |tag| %>
+          <div class="button">
+            <%= link_to tag, tagged_questions_path(tag: tag) %>
+          </div>
+          <% end %></p>
+        </div>
+      </div>
       <div class="answer_form" id="answer_form_<%=question.id%>" style="display:none;">
         <%= render "shared/new_answer", question: question %>
       </div>

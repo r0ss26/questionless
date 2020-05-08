@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/home', to: 'answers#home', as: :home
 
   resources :questions do
+      get "tagged", on: :collection, as: "tagged"
     resources :answers do
       member do
         put 'like', to: 'answers#upvote'
