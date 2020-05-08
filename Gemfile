@@ -58,9 +58,6 @@ gem 'faker'
 # Use activestorage for storing files
 gem 'activestorage'
 
-# Use Omniauth
-gem 'omniauth'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -95,5 +92,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 # acts_as_votable
-gem 'acts_as_votable', "~> 0.10.0"
+gem 'acts_as_votable', '~> 0.10.0'
 
+# acts as taggable
+gem 'acts-as-taggable-on', '~> 6.0'

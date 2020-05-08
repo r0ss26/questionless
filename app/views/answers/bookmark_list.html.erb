@@ -1,0 +1,7 @@
+<h1>Bookmark Answers</h1>
+
+<% current_user.bookmarks.each do |answer| %>
+
+<%= render  "components/answer", answer: answer %>
+
+<% end %>

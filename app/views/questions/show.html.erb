@@ -1,21 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <div class="buttons">
+<% @question.tag_list.each do |tag| %>
   <button class="button">
-    Tag
+    <%= link_to tag, tagged_questions_path(tag: tag) %>
   </button>
-  <button class="button">
-    Tag
-  </button>
-  <button class="button">
-    Tag
-  </button>
+<% end %></p>
 </div>
+
 
 <h1 class="title is-1"><%= @question.title %></h1>
 
 <p> By
+  <%= link_to profile_path(@question.user) do %>
   <%= @question.user.email %>
+  <% end %>
 </p>
 
 <div class="buttons">

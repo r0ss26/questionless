@@ -1,0 +1,9 @@
+<% if current_user.bookmarks.include?(answer)%>
+<%= link_to bookmark_question_answer_path(answer.question, answer), method: :put, class:"button" do %>
+<span class="icon"><i class="fas fa-bookmark"></i></i></span>
+<% end %>
+<% else %>
+<%= link_to bookmark_question_answer_path(answer.question, answer), method: :put, class:"button" do %>
+<span class="icon"><i class="far fa-bookmark"></i></span>
+<% end %>
+<% end %>

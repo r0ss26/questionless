@@ -7,5 +7,7 @@ class ProfilesController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+    @answers = @user.answers
+    @questions = @user.questions
   end
 end

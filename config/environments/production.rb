@@ -94,4 +94,7 @@ Rails.application.configure do
 
   # Enabling bg image
 config.public_file_server.enabled = true
+
+
+
 end
