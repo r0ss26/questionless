@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
   end
 
   def home
-    @answers = Answer.all
+    @answers = Answer.order(cached_votes_score: :desc)
   end
 
   def create
@@ -104,6 +104,8 @@ class AnswersController < ApplicationController
   end
 
   def redirect_to_question_path
-    redirect_back(fallback_location: question_path(@question))
+    redirect_back(fallback_location: question_path(params[:question_id]))
+    # question_path(params[:question_id])
+    # question_path(@question)
   end
 end
