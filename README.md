@@ -45,6 +45,8 @@ The site should now be running on your local server.
 
 ##### Architecture & Models
 
+![ERD](Questionless_ERD.png)
+
 ![ERD Diagram](erd.png)
 
 
