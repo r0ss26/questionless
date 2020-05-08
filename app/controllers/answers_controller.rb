@@ -44,6 +44,21 @@ class AnswersController < ApplicationController
     redirect_to question_path(params[:question_id])
   end
 
+  def toggle_bookmark
+    @answer = Answer.find(params[:id])
+    @question = Question.find_by_id(params[:question_id])
+    if current_user.bookmarks.include?(@answer)
+      current_user.bookmarks.delete(@answer)
+    else
+      current_user.bookmarks << @answer
+    end
+    redirect_to question_path(@question)
+  end
+
+  def bookmark_list
+    @answers = current_user.bookmarks
+  end
+
   private
 
   def answer_params
@@ -53,5 +68,9 @@ class AnswersController < ApplicationController
   def set_answer
     @question = Question.find_by_id(params[:question_id])
     @answer = @question.answers.find(params[:id])
+  end
+
+  def bookmark_params
+    params.require(:bookmark).permit(:answer_id)
   end
 end

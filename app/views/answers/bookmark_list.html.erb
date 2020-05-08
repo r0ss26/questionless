@@ -1,4 +1,7 @@
-<% @question.answers.each do |answer| %>
+<h1>Bookmark Answers</h1>
+
+<% current_user.bookmarks.each do |answer| %>
+
 <% if answer.user %>
 <div>
   <div class="field is-grouped">
@@ -18,7 +21,7 @@
 </p>
 <p>
   <% if current_user && answer.user_id == current_user.id %>
-  <%= link_to 'Edit', edit_question_answer_path(@question.id, answer) %>
+  <%= link_to 'Edit', edit_question_answer_path(answer.question.id, answer) %>
   <%= link_to 'Delete', [answer.question, answer], method: :delete, data: { confirm: 'Are you sure?'} %>
   <% end %>
 </p>
@@ -27,29 +30,29 @@
 
 <div class="buttons">
   <button class="button is-light"><span>
-      <%= link_to like_question_answer_path(@question, answer), method: :put do %>
+      <%= link_to like_question_answer_path(answer.question, answer), method: :put do %>
       Upvote
       <%= answer.get_upvotes.size %>
       <% end %>
     </span></button>
   <button class="button is-light"><span>
-      <%= link_to dislike_question_answer_path(@question, answer), method: :put do %>
+      <%= link_to dislike_question_answer_path(answer.question, answer), method: :put do %>
       Downvote
       <%= answer.get_downvotes.size %>
       <% end %>
     </span></button>
   <button class="button is-light">Share</button>
-  <button class="button is-light">
-    <% if current_user.bookmarks.include?(answer)%>
-    <%= link_to bookmark_question_answer_path(@question.id, answer), method: :put do %>
-    <span class="icon"><i class="fas fa-bookmark"></i></i></span>
-    <% end %>
-    <% else %>
-    <%= link_to bookmark_question_answer_path(@question.id, answer), method: :put do %>
-    <span class="icon"><i class="far fa-bookmark"></i></span>
-    <% end %>
-    <% end %>
-  </button>
+  <button class="button is-light">Bookmark</button>
+
+  <% if current_user.bookmarks.include?(answer)%>
+  <%= link_to bookmark_question_answer_path(answer.question, answer), method: :put, class:"card-header-icon" do %>
+  <span class="icon"><i class="fas fa-bookmark"></i></i></span>
+  <% end %>
+  <% else %>
+  <%= link_to bookmark_question_answer_path(answer.question, answer), method: :put, class:"card-header-icon" do %>
+  <span class="icon"><i class="far fa-bookmark"></i></span>
+  <% end %>
+  <% end %>
 
   <button class="button is-light"><span class="icon"><i class="fas fa-ellipsis-h"></i></span></button>
 </div>

@@ -14,6 +14,9 @@ class User < ApplicationRecord
 
   has_many :answers, dependent: :destroy
 
+  has_many :bookmark_answers, dependent: :destroy
+  has_many :bookmarks, through: :bookmark_answers, source: :answer
+
   after_initialize :init
 
   def init
