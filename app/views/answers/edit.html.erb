@@ -1,13 +1,13 @@
-<h1>Edit Answer</h1>
+<h1 class = "edit">Edit Answer:</h1>
 
 <%= form_with(url: question_answer_path, model: @answer, local: true) do |form| %>
 
   <p>
-    <%= form.label :answer %><br>
+    <%# <%= form.label :answer, id: :edit_answer_label %><br>
     <%= form.text_area :answer %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit class: "button is-light" %>
   </p>
 
 <% end %>

@@ -2,11 +2,10 @@
 <% if current_user %>
 <%= form_with(model: [ question, question.answers.build ], local: true) do |form| %>
 <p>
-  <%= form.label :answer %><br>
   <%= form.text_area :answer %>
 </p>
 <p>
-  <%= form.submit %>
+  <%= form.submit class: "button is-light" %>
 </p>
 <% end %>
 <% else %>
