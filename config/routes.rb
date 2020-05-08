@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/bookmarks', to: 'answers#bookmark_list', as: :bookmark
 
   resources :questions do
+      get "tagged", on: :collection, as: "tagged"
     resources :answers do
       member do
         put 'like', to: 'answers#upvote'
