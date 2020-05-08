@@ -1,0 +1,12 @@
+<button class="button is-light"><span>
+    <%= link_to like_question_answer_path(answer.question, answer), method: :put do %>
+    Upvote
+    <%= answer.get_upvotes.size %>
+    <% end %>
+  </span></button>
+<button class="button is-light"><span>
+    <%= link_to dislike_question_answer_path(answer.question, answer), method: :put do %>
+    Downvote
+    <%= answer.get_downvotes.size %>
+    <% end %>
+  </span></button>
