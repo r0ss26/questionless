@@ -2,15 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .bg-image {
-    background-image: url(bg.png);
+    background-image: url(images/bg.png);
     position: fixed;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+.page {
     display: grid;
     grid-template-columns: 20% auto 20%;
-    grid-template-rows: 20% auto 60%;
+    grid-template-rows: 30% auto 60%;
 }
 
 .container {
@@ -45,6 +48,8 @@
 }
 
 .login {
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
     text-align: center;
 }

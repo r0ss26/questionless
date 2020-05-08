@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'searches/index'
   # Create privacy page for facebook oauth
   get '/privacy', to: 'pages#privacy'
+
+  get '/search', to: 'searches#index', as: :search
 
   devise_scope :user do
     authenticated :user do

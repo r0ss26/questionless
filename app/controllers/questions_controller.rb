@@ -8,7 +8,10 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    # @questions = Question.all
+    # Search questions sample
+    @q = Question.ransack(params[:q])
+    @questions = @q.result(distinct: true)
   end
 
   # GET /questions/1
@@ -26,7 +29,6 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-  
     @question = current_user.questions.new(question_params)
 
     respond_to do |format|
@@ -66,11 +68,11 @@ class QuestionsController < ApplicationController
   end
 
   def tagged
-    if params[:tag].present?
-      @questions = Question.tagged_with(params[:tag])
-    else
-      @questions = Question.all
-    end
+    @questions = if params[:tag].present?
+                   Question.tagged_with(params[:tag])
+                 else
+                   Question.all
+                 end
     render :index
   end
 
@@ -90,6 +92,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :tag_list)
   end
-
-
 end

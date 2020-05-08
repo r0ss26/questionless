@@ -1,0 +1,23 @@
+<h1>Searches#index</h1>
+<p>Find me in app/views/searches/index.html.erb</p>
+
+<% form_tag(url: search_path, method: :get) do %>
+<%= text_field_tag :q, nil, placeholder: "Search Questionless" %>
+<%= submit_tag("Search") %>
+<% end %>
+
+<% @users.each do |user| %>
+<%= user.name%>
+<% end %>
+
+<% @tags.each do |tag| %>
+<%= tag.name%>
+<% end %>
+
+<% @answers.each do |answer| %>
+<%= answer.answer%>
+<% end %>
+
+<% @questions.each do |question| %>
+<%= question.title%>
+<% end %>
