@@ -41,12 +41,33 @@
           </button>
 
           <div class="field" id="search">
+
+            <% if controller.controller_name == 'questions' && controller.action_name == 'index' %>
+
+            <div class="control has-icons-left has-icons-right">
+              <%= search_form_for @q do |f| %>
+              <%# Search if the name field contains... %>
+              <%= f.search_field :title_cont, class:"input", placeholder:"Search Questionless" %>
+              <span class="icon is-left">
+                <i class="fas fa-search"></i>
+                <%= f.submit style:"display:none" %>
+              </span>
+              <% end %>
+            </div>
+
+            <% else %>
+
+            <%#= link_to search_path do %>
+            <%= link_to questions_path do %>
             <div class="control has-icons-left has-icons-right">
               <input class="input" type="email" placeholder="Search Questionless">
               <span class="icon is-left">
                 <i class="fas fa-search"></i>
               </span>
             </div>
+            <% end %>
+
+            <% end %>
           </div>
 
           <% if user_signed_in? %>

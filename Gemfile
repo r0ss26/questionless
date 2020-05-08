@@ -96,3 +96,6 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 # acts as taggable
 gem 'acts-as-taggable-on', '~> 6.0'
+
+# Use ransack for search
+gem 'ransack', github: 'activerecord-hackery/ransack'
