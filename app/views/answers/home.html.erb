@@ -1,5 +1,20 @@
 <div class="columns">
-  <div class="column is-2"> </div>
+  <div class="column is-2">
+    <div class="tags">
+      <h3><b>Most Popular</b></h3>
+      <hr class="dropdown-divider">
+      <br>
+      <br>
+      <div class="buttons">
+        <% @tags.each do |tag| %>
+        <div class="button is-small">
+          <%= link_to tag, tagged_questions_path(tag: tag.name) %>
+        </div>
+        <% end %></p>
+      </div>
+    </div>
+  </div>
+
   <div class="column is-8">
     <div class="card">
       <tbody>

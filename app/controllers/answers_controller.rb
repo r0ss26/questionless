@@ -14,6 +14,7 @@ class AnswersController < ApplicationController
 
   def home
     @answers = Answer.order(cached_votes_score: :desc)
+    @tags = ActsAsTaggableOn::Tag.most_used
   end
 
   def create
@@ -48,7 +49,7 @@ class AnswersController < ApplicationController
 
   def upvote
     # @answer = Answer.find(params[:id])
-    
+
     @answer.upvote_by(current_user)
 
     # redirect_to question_path(params[:question_id])

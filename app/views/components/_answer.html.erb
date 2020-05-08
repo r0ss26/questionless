@@ -13,6 +13,7 @@
 
     <% if controller.controller_name == "answers" && controller.action_name == "home" %>
     <h3 class="title is-4">
+      <%= render  "components/tag", question: answer.question %>
       <%#= link_to question_answers_path(answer.question) do %>
       <%= link_to  question_path(answer.question) do %>
       <%= answer.question.title %>
