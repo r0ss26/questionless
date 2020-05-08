@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'questions#index', as: :authenticated_root
+      root 'answers#home', as: :authenticated_root
     end
 
     unauthenticated do
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   get '/bookmarks', to: 'answers#bookmark_list', as: :bookmark
+  get '/home', to: 'answers#home', as: :home
 
   resources :questions do
     resources :answers do

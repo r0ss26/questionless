@@ -12,6 +12,10 @@ class AnswersController < ApplicationController
     @answers = Question.find_by_id(params[:question_id]).answers.all
   end
 
+  def home
+    @answers = Answer.all
+  end
+
   def create
     # @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answer_params.merge(user_id: current_user.id))
