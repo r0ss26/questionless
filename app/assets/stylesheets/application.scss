@@ -20,70 +20,64 @@
 /* Style the navbar */
 
 body {
-  background-color: #dee0e1;
-
-  .navbar {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
-    position: sticky;
-    top: 0;
-    margin: 0 !important;
-
-    /* width: 100%;
+    position: relative;
+    min-height: 100%;
+    width: 100vw;
+    background-color: #dee0e1;
+    .navbar {
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+        position: sticky;
+        top: 0;
+        margin: 0 !important;
+        /* width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between; */
-
-    .navbar-logo img {
-      width: 25px;
-      height: 25px;
-      margin-right: 0px;
-      padding-left: 0px;
+        .navbar-logo img {
+            width: 25px;
+            height: 25px;
+            margin-right: 0px;
+            padding-left: 0px;
+        }
+        .navbar-menu .buttons {
+            a {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding: 0;
+            }
+            a:hover {
+                background-color: inherit;
+            }
+        }
+        #navbar-avatar {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
     }
-
-    .navbar-menu .buttons {
-      a {
-        margin-left: 10px;
-        margin-right: 10px;
+    #yield {}
+    #search {
+        padding-top: 5px;
+    }
+    .avatar {
+        width: 2.5rem;
+    }
+    .card-content {
         padding: 0;
-      }
-
-      a:hover {
-        background-color: inherit;
-      }
+        td {
+            padding: 1.5rem;
+        }
     }
-
-    #navbar-avatar {
-      margin-left: 5px;
-      margin-right: 5px;
+    footer {
+        height: 30px;
+        font-weight: 600;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
     }
-  }
-
-  #yield {
-  }
-
-  #search {
-    padding-top: 5px;
-  }
-
-  .avatar {
-    width: 2.5rem;
-  }
-
-  .card-content {
-    padding: 0;
-
-    td {
-      padding: 1.5rem;
-    }
-  }
-
-  footer {
-    height: 0.5rem;
-    font-weight: 600;
-  }
-
-  // .answer_form {
-  //   display: none;
-  // }
+    // .answer_form {
+    //   display: none;
+    // }
 }
